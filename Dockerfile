@@ -2,7 +2,7 @@ FROM amazonlinux:latest
 
 ARG LIBS=/usr/lib64
 ARG OUT=/root/layers
-ARG NODE_VERSION=14
+ARG NODE_VERSION=16
 
 # set up container
 RUN yum -y update \
@@ -16,7 +16,7 @@ RUN node --version
 # will be created and become working dir
 WORKDIR $OUT/nodejs
 
-RUN npm install canvas@next \
+RUN npm install canvas@2.9.3 \
 chartjs-plugin-datalabels \
 chartjs-node-canvas \
 chart.js
