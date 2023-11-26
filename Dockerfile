@@ -16,10 +16,10 @@ RUN node --version
 # will be created and become working dir
 WORKDIR $OUT/nodejs
 
-RUN npm install canvas@2.9.3 \
-chartjs-plugin-datalabels@2.1.0 \
+RUN npm install canvas@2.11.2 \
+chartjs-plugin-datalabels@2.2.0 \
 chartjs-node-canvas@4.1.6 \
-chart.js@3.9.1
+chart.js@4.4.0
 
 # will be created and become working dir
 WORKDIR $OUT/lib

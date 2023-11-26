@@ -1,5 +1,5 @@
-read -p "Node Version (default: 16) "  VERSION
-VERSION=${VERSION:-16}
+read -p "Node Version (default: 18) "  VERSION
+VERSION=${VERSION:-18}
 # echo $VERSION
 
 docker build \
