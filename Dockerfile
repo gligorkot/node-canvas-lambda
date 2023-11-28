@@ -1,14 +1,14 @@
-FROM amazonlinux:latest
+FROM public.ecr.aws/lambda/nodejs:20
 
 ARG LIBS=/usr/lib64
 ARG OUT=/root/layers
-ARG NODE_VERSION=16
+ARG NODE_VERSION=20
 
 # set up container
 RUN yum -y update \
 && yum -y groupinstall "Development Tools" \
 && curl --silent --location https://rpm.nodesource.com/setup_${NODE_VERSION}.x | bash - \
-&& yum install -y nodejs gcc-c++ cairo-devel libjpeg-turbo-devel pango-devel giflib-devel
+&& yum install -y gcc-c++ cairo-devel libjpeg-turbo-devel pango-devel giflib-devel
 # && yum install -y nodejs cairo cairo-devel cairomm-devel libjpeg-turbo-devel pango pango-devel pangomm pangomm-devel giflib-devel
 
 RUN node --version
